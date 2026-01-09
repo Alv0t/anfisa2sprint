@@ -11,6 +11,7 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
+    'debug_toolbar',
     'homepage.apps.HomepageConfig',
     'ice_cream.apps.IceCreamConfig',
     'about.apps.AboutConfig',
@@ -23,6 +24,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -31,6 +33,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+] 
 
 ROOT_URLCONF = 'anfisa_for_friends.urls'
 
@@ -79,7 +85,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
